@@ -321,7 +321,6 @@
         // 设置默认
         // _chooseAddressView.address = @"四川省成都市武侯区";
         // _chooseAddressView.areaCode = @"510107";
-
         _chooseAddressView.chooseFinish = ^{
             weakSelf.coverView.hidden = YES;
             NSLog(@"选择的地区为：%@", weakSelf.chooseAddressView.address);
