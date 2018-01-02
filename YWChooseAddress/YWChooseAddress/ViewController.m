@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self setUp];
+    [self setUp];//天府软件园C区3栋
 }
 
 #pragma mark - setUp UI

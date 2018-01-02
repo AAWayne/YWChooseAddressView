@@ -126,7 +126,7 @@
 }
 
 #pragma mark *** 弹出选择地区视图 ***
-- (void)chooseLocation {
+- (void)chooseAddress {
     self.coverView.hidden = !self.coverView.hidden;
     self.chooseAddressView.hidden = self.coverView.hidden;
 }
@@ -280,7 +280,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0 && indexPath.row == 2) {
         // 选择地区
-        [self chooseLocation];
+        [self chooseAddress];
     }
 }
 
