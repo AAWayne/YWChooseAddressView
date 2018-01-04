@@ -10,7 +10,7 @@
 #import "FMDB.h"
 #import "YWAddressModel.h"
 
-static NSString * const dbName = @"CleverAddressDB.db";
+static NSString * const dbName = @"YWAddressDB.db";
 static NSString * const locationTabbleName = @"addressTabble";
 
 @interface YWAddressDataTool ()
@@ -100,26 +100,28 @@ static YWAddressDataTool *shareInstance = nil;
 
 //发送网络请求，获取省市区数据，这里用的是本地json数据
 - (void)requestGetData {
-    
-    if ([self isTableOK]) {
-        return;
-    }
-    
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"json"];
-    NSData *data=[NSData dataWithContentsOfFile:jsonPath];
-    NSError *error;
-    NSArray * jsonObjectArray =[NSJSONSerialization JSONObjectWithData:data
-                                                  options:kNilOptions
-                                                    error:&error];
-    
-    for (NSDictionary * dict in jsonObjectArray) {
-        YWAddressModel * item = [[YWAddressModel alloc] initWithDict:dict];
-        [self.dataArray addObject:item];
-    }
-    if(self.dataArray.count > 0  && [self createTable]){
-    
-        [self insertRecords];
-    }
+    // 开启异步线程初始化数据
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if ([self isTableOK]) {
+            return;
+        }
+        
+        NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"json"];
+        NSData *data=[NSData dataWithContentsOfFile:jsonPath];
+        NSError *error;
+        NSArray * jsonObjectArray =[NSJSONSerialization JSONObjectWithData:data
+                                                                   options:kNilOptions
+                                                                     error:&error];
+        
+        for (NSDictionary * dict in jsonObjectArray) {
+            YWAddressModel * item = [[YWAddressModel alloc] initWithDict:dict];
+            [self.dataArray addObject:item];
+        }
+        if(self.dataArray.count > 0  && [self createTable]) {
+            
+            [self insertRecords];
+        }
+    });
 }
 
 //往表插入数据
@@ -130,8 +132,7 @@ static YWAddressDataTool *shareInstance = nil;
     if ([self.fmdb open] && [self.fmdb beginTransaction]) {
         
         BOOL isRollBack = NO;
-        @try
-        {
+        @try {
             for (YWAddressModel * item in self.dataArray) {
                 
                 if (item.level.intValue == 3 && [item.name isEqualToString:@"市辖区"]) {
@@ -142,30 +143,25 @@ static YWAddressDataTool *shareInstance = nil;
                                       @"INSERT INTO %@ ('code','sheng','di','xian','name', 'level') VALUES ('%@','%@','%@','%@','%@','%@')",
                                       locationTabbleName,item.code, item.sheng,item.di,item.xian ,item.name, item.level];
                 BOOL a = [self.fmdb executeUpdate:insertSql];
-                if (!a)
-                {
+                if (!a) {
                     NSLog(@"插入地址信息数据失败");
                 }
-                else
-                {
+                else {
                     NSLog(@"批量插入地址信息数据成功！");
                     
                 }
             }
             NSDate *endTime = [NSDate date];
             NSTimeInterval a = [endTime timeIntervalSince1970] - [startTime timeIntervalSince1970];
-            NSLog(@"使用事务地址信息用时%.3f秒",a);
+            NSLog(@"使用事务批量插入地址信息用时%.3f秒",a);
             
         }
-        @catch (NSException *exception)
-        {
+        @catch (NSException *exception) {
             isRollBack = YES;
             [self.fmdb rollback];
         }
-        @finally
-        {
-            if (!isRollBack)
-            {
+        @finally {
+            if (!isRollBack) {
                 [self.fmdb commit];
             }
         }

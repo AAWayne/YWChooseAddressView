@@ -70,8 +70,6 @@
     
 }
 - (void)initUserDataSource {
-    // 初始化地址
-    [[YWAddressDataTool sharedManager] requestGetData];
 
     _dataSource = @[@[@"收货人", @"联系电话", @"所在地区"],
                     @[@"设为默认"]];
@@ -127,8 +125,14 @@
 
 #pragma mark *** 弹出选择地区视图 ***
 - (void)chooseAddress {
-    self.coverView.hidden = !self.coverView.hidden;
-    self.chooseAddressView.hidden = self.coverView.hidden;
+    WeakSelf;
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        weakSelf.coverView.frame = CGRectMake(0, 0, YWScreenW, YWScreenH);
+        weakSelf.chooseAddressView.hidden = NO;
+    } completion:^(BOOL finished) {
+        // 动画结束之后添加阴影
+        weakSelf.coverView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    }];
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
@@ -242,6 +246,11 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.leftStr = _dataSource[indexPath.section][indexPath.row];
             cell.rightStr = _areaAddress;
+            if (![_areaAddress isEqualToString:@""] && ![_areaAddress isEqualToString:@"请选择"]) {
+                cell.rightLabel.textColor = [UIColor blackColor];
+            } else {
+                cell.rightLabel.textColor = [UIColor lightGrayColor];
+            }
             return cell;
         }
     } else {
@@ -322,13 +331,18 @@
         // _chooseAddressView.address = @"四川省成都市武侯区";
         // _chooseAddressView.areaCode = @"510107";
         _chooseAddressView.chooseFinish = ^{
-            weakSelf.coverView.hidden = YES;
+            weakSelf.coverView.backgroundColor = [UIColor clearColor];
             NSLog(@"选择的地区为：%@", weakSelf.chooseAddressView.address);
             _areaAddress = weakSelf.chooseAddressView.address;
             if (_areaAddress.length == 0) {
                 _areaAddress = @"请选择";
             }
             [weakSelf.tableView reloadData];
+            // 隐藏视图 - 动画
+            [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+                weakSelf.coverView.frame = CGRectMake(0, YWScreenH, YWScreenW, YWScreenH);
+                weakSelf.chooseAddressView.hidden = NO;
+            } completion:nil];
         };
     }
     return _chooseAddressView;
@@ -336,13 +350,11 @@
 
 - (UIView *)coverView {
     if (!_coverView) {
-        _coverView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-        _coverView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+        _coverView = [[UIView alloc]initWithFrame:CGRectMake(0, YWScreenH, YWScreenW, YWScreenH)];
         [_coverView addSubview:self.chooseAddressView];
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapCover:)];
         [_coverView addGestureRecognizer:tap];
         tap.delegate = self;
-        _coverView.hidden = YES;
     }
     return _coverView;
 }
