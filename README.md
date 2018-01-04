@@ -3,9 +3,11 @@
 > 高仿淘宝添加新地址UI、高仿京东地区选择器
 
 ### UI效果图
-
-![效果图1](UI效果图1.png)
-![效果图1](UI效果图2.png)
+<div align="center">    
+	<img src = "./UI效果图1.jpeg" width = "240" height = "430" alt="图片名称" align = center />
+	<img src = "./UI效果图2.jpeg" width = "240" height = "430" alt="图片名称" align = center />
+	<img src = "./UI效果图3.jpeg" width = "240" height = "430" alt="图片名称" align = center />
+</div>
 
 `#import "YWNewAddressViewController.m"`
 
