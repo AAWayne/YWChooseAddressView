@@ -16,16 +16,15 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YWChooseAddress"
-  s.version      = “1.0.0”
-  s.summary      = "A short description of YWChooseAddress."
+  s.version      = "1.0.0"
+  s.summary      = "地区选择器"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+  s.description  = "高仿京东地区选择器"
 
   s.homepage     = "https://github.com/90candy/YWChooseAddressView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -38,8 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license             = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -129,10 +127,11 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   
-  s.dependency "LKDBHelper", "~> 2.5.0"
+  # s.dependency "LKDBHelper", "~> 2.5.0"
+  s.dependency "FMDB", "~> 2.7.2"
 
 end
