@@ -99,6 +99,7 @@
 		369E26E91FFBB1600009335F = {
 			isa = PBXGroup;
 			children = (
+				369E270B1FFBB1BE0009335F /* YWChooseAddressView */,
 				369E26F41FFBB1600009335F /* YWChooseAddress */,
 				369E26F31FFBB1600009335F /* Products */,
 				68295E52D00149B61418F59F /* Pods */,
@@ -117,7 +118,6 @@
 		369E26F41FFBB1600009335F /* YWChooseAddress */ = {
 			isa = PBXGroup;
 			children = (
-				369E270B1FFBB1BE0009335F /* YWChooseAddressView */,
 				369E272C1FFBB38A0009335F /* YWNewAddress */,
 				369E26F51FFBB1600009335F /* AppDelegate.h */,
 				369E26F61FFBB1600009335F /* AppDelegate.m */,

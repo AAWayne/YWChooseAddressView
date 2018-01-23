@@ -6,5 +6,5 @@ target 'YWChooseAddress' do
   # use_frameworks!
 
   # Pods for YWChooseAddress
-   pod 'LKDBHelper'
+   pod 'FMDB', '~>2.7.2'
 end
