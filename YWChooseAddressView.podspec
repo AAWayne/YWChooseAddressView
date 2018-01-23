@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint YWChooseAddress.podspec' to ensure this is a
+#  Be sure to run `pod spec lint YWChooseAddressView.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -15,18 +15,19 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "YWChooseAddress"
-  s.version      = "1.0.0"
-  s.summary      = "地区选择器"
+  s.name         = "YWChooseAddressView"
+  s.version      = "0.0.1"
+  s.summary      = "A short description of YWChooseAddressView."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "高仿京东地区选择器"
+  s.description  = <<-DESC
+                   DESC
 
-  s.homepage     = "https://github.com/90candy/YWChooseAddressView"
+  s.homepage     = "http://EXAMPLE/YWChooseAddressView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -37,7 +38,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license             = { :type => "MIT", :file => "LICENSE" }
+  s.license      = "MIT (example)"
+  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -77,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { :git => "https://github.com/90candy/YWChooseAddressView.git", :tag => s.version }
+  s.source       = { :git => "http://EXAMPLE/YWChooseAddressView.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -127,11 +129,9 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  s.requires_arc = true
+  # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  
-  # s.dependency "LKDBHelper", "~> 2.5.0"
-  s.dependency "FMDB", "~> 2.7.2"
+  # s.dependency "JSONKit", "~> 1.4"
 
 end
