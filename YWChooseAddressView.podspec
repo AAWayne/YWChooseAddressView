@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YWChooseAddressView"
-  s.version      = “1.0.1”
+  s.version      = "1.0.1"
   s.summary      = "地区选择器"
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "YWChooseAddressView/*.{h,m}"
+  s.source_files  = "YWChooseAddress/YWChooseAddressView/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
