@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class YWAddressModel;
+
 @interface YWAddressTableViewCell : UITableViewCell
+
 @property (nonatomic,strong) YWAddressModel * item;
+
 @end

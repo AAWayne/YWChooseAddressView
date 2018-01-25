@@ -13,14 +13,12 @@
 		369E26FF1FFBB1600009335F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 369E26FE1FFBB1600009335F /* Assets.xcassets */; };
 		369E27021FFBB1600009335F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369E27001FFBB1600009335F /* LaunchScreen.storyboard */; };
 		369E27051FFBB1600009335F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27041FFBB1600009335F /* main.m */; };
-		369E27221FFBB1BE0009335F /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E270E1FFBB1BE0009335F /* UIView+Frame.m */; };
 		369E27231FFBB1BE0009335F /* btn_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 369E27101FFBB1BE0009335F /* btn_check@2x.png */; };
 		369E27241FFBB1BE0009335F /* btn_check@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 369E27111FFBB1BE0009335F /* btn_check@3x.png */; };
 		369E27251FFBB1BE0009335F /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 369E27121FFBB1BE0009335F /* Cities.json */; };
 		369E27261FFBB1BE0009335F /* YWAddressDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27151FFBB1BE0009335F /* YWAddressDataTool.m */; };
 		369E27271FFBB1BE0009335F /* YWAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27191FFBB1BE0009335F /* YWAddressModel.m */; };
 		369E27281FFBB1BE0009335F /* YWAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E271C1FFBB1BE0009335F /* YWAddressTableViewCell.m */; };
-		369E27291FFBB1BE0009335F /* YWAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E271D1FFBB1BE0009335F /* YWAddressTableViewCell.xib */; };
 		369E272A1FFBB1BE0009335F /* YWAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E271F1FFBB1BE0009335F /* YWAddressView.m */; };
 		369E272B1FFBB1BE0009335F /* YWChooseAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27211FFBB1BE0009335F /* YWChooseAddressView.m */; };
 		369E273A1FFBB38A0009335F /* YWNewAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E272F1FFBB38A0009335F /* YWNewAddressViewController.m */; };
@@ -30,6 +28,7 @@
 		369E273E1FFBB38A0009335F /* NewAdressTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27361FFBB38A0009335F /* NewAdressTableViewCell2.xib */; };
 		369E273F1FFBB38A0009335F /* NewAdressTableViewCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27381FFBB38A0009335F /* NewAdressTableViewCell3.m */; };
 		369E27401FFBB38A0009335F /* NewAdressTableViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27391FFBB38A0009335F /* NewAdressTableViewCell3.xib */; };
+		36EE43992019AA9800B192B2 /* UIView+YWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EE43982019AA9800B192B2 /* UIView+YWFrame.m */; };
 		556DF17DB6BF80FE46196C65 /* libPods-YWChooseAddress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E829FEED9EC7CD2027A98FAB /* libPods-YWChooseAddress.a */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +43,6 @@
 		369E27011FFBB1600009335F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		369E27031FFBB1600009335F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		369E27041FFBB1600009335F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		369E270D1FFBB1BE0009335F /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		369E270E1FFBB1BE0009335F /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		369E27101FFBB1BE0009335F /* btn_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_check@2x.png"; sourceTree = "<group>"; };
 		369E27111FFBB1BE0009335F /* btn_check@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_check@3x.png"; sourceTree = "<group>"; };
 		369E27121FFBB1BE0009335F /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
@@ -55,7 +52,6 @@
 		369E27191FFBB1BE0009335F /* YWAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressModel.m; sourceTree = "<group>"; };
 		369E271B1FFBB1BE0009335F /* YWAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressTableViewCell.h; sourceTree = "<group>"; };
 		369E271C1FFBB1BE0009335F /* YWAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressTableViewCell.m; sourceTree = "<group>"; };
-		369E271D1FFBB1BE0009335F /* YWAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWAddressTableViewCell.xib; sourceTree = "<group>"; };
 		369E271E1FFBB1BE0009335F /* YWAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressView.h; sourceTree = "<group>"; };
 		369E271F1FFBB1BE0009335F /* YWAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressView.m; sourceTree = "<group>"; };
 		369E27201FFBB1BE0009335F /* YWChooseAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWChooseAddressView.h; sourceTree = "<group>"; };
@@ -71,6 +67,8 @@
 		369E27371FFBB38A0009335F /* NewAdressTableViewCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAdressTableViewCell3.h; sourceTree = "<group>"; };
 		369E27381FFBB38A0009335F /* NewAdressTableViewCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAdressTableViewCell3.m; sourceTree = "<group>"; };
 		369E27391FFBB38A0009335F /* NewAdressTableViewCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAdressTableViewCell3.xib; sourceTree = "<group>"; };
+		36EE43972019AA9800B192B2 /* UIView+YWFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YWFrame.h"; sourceTree = "<group>"; };
+		36EE43982019AA9800B192B2 /* UIView+YWFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YWFrame.m"; sourceTree = "<group>"; };
 		53A3FBCE4054695CC4DBA5EF /* Pods-YWChooseAddress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWChooseAddress.release.xcconfig"; path = "Pods/Target Support Files/Pods-YWChooseAddress/Pods-YWChooseAddress.release.xcconfig"; sourceTree = "<group>"; };
 		A1191CABE6560E4C1AB7F454 /* Pods-YWChooseAddress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWChooseAddress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YWChooseAddress/Pods-YWChooseAddress.debug.xcconfig"; sourceTree = "<group>"; };
 		E829FEED9EC7CD2027A98FAB /* libPods-YWChooseAddress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YWChooseAddress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +144,8 @@
 		369E270C1FFBB1BE0009335F /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				369E270D1FFBB1BE0009335F /* UIView+Frame.h */,
-				369E270E1FFBB1BE0009335F /* UIView+Frame.m */,
+				36EE43972019AA9800B192B2 /* UIView+YWFrame.h */,
+				36EE43982019AA9800B192B2 /* UIView+YWFrame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -192,13 +190,12 @@
 		369E271A1FFBB1BE0009335F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				369E271B1FFBB1BE0009335F /* YWAddressTableViewCell.h */,
-				369E271C1FFBB1BE0009335F /* YWAddressTableViewCell.m */,
-				369E271D1FFBB1BE0009335F /* YWAddressTableViewCell.xib */,
-				369E271E1FFBB1BE0009335F /* YWAddressView.h */,
-				369E271F1FFBB1BE0009335F /* YWAddressView.m */,
 				369E27201FFBB1BE0009335F /* YWChooseAddressView.h */,
 				369E27211FFBB1BE0009335F /* YWChooseAddressView.m */,
+				369E271B1FFBB1BE0009335F /* YWAddressTableViewCell.h */,
+				369E271C1FFBB1BE0009335F /* YWAddressTableViewCell.m */,
+				369E271E1FFBB1BE0009335F /* YWAddressView.h */,
+				369E271F1FFBB1BE0009335F /* YWAddressView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 			files = (
 				369E27251FFBB1BE0009335F /* Cities.json in Resources */,
 				369E27021FFBB1600009335F /* LaunchScreen.storyboard in Resources */,
-				369E27291FFBB1BE0009335F /* YWAddressTableViewCell.xib in Resources */,
 				369E26FF1FFBB1600009335F /* Assets.xcassets in Resources */,
 				369E27401FFBB38A0009335F /* NewAdressTableViewCell3.xib in Resources */,
 				369E273C1FFBB38A0009335F /* NewAdressTableViewCell1.xib in Resources */,
@@ -380,7 +376,6 @@
 			files = (
 				369E27271FFBB1BE0009335F /* YWAddressModel.m in Sources */,
 				369E273D1FFBB38A0009335F /* NewAdressTableViewCell2.m in Sources */,
-				369E27221FFBB1BE0009335F /* UIView+Frame.m in Sources */,
 				369E273A1FFBB38A0009335F /* YWNewAddressViewController.m in Sources */,
 				369E273F1FFBB38A0009335F /* NewAdressTableViewCell3.m in Sources */,
 				369E26FA1FFBB1600009335F /* ViewController.m in Sources */,
@@ -391,6 +386,7 @@
 				369E27281FFBB1BE0009335F /* YWAddressTableViewCell.m in Sources */,
 				369E273B1FFBB38A0009335F /* NewAdressTableViewCell1.m in Sources */,
 				369E26F71FFBB1600009335F /* AppDelegate.m in Sources */,
+				36EE43992019AA9800B192B2 /* UIView+YWFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

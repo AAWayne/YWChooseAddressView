@@ -25,7 +25,7 @@ static YWAddressDataTool *shareInstance = nil;
 #pragma mark - Singleton
 + (YWAddressDataTool *)sharedManager {
     @synchronized (self) {
-        if (shareInstance == nil) {
+        if (!shareInstance) {
             shareInstance = [[self alloc] init];
         }
     }
@@ -34,7 +34,7 @@ static YWAddressDataTool *shareInstance = nil;
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
     @synchronized (self) {
-        if (shareInstance == nil) {
+        if (!shareInstance) {
             shareInstance = [super allocWithZone:zone];
         }
     }
@@ -338,7 +338,7 @@ static YWAddressDataTool *shareInstance = nil;
 
 - (NSMutableArray *)dataArray {
     
-    if (_dataArray == nil) {
+    if (!_dataArray) {
         _dataArray = [[NSMutableArray alloc]init];
     }
     return _dataArray;

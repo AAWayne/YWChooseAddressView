@@ -8,27 +8,24 @@
 
 #import "YWChooseAddressView.h"
 #import "YWAddressView.h"
-#import "UIView+Frame.h"
+#import "UIView+YWFrame.h"
 #import "YWAddressTableViewCell.h"
 #import "YWAddressModel.h"
 #import "YWAddressDataTool.h"
-
-#define YWCOLOR(_R,_G,_B,_A) [UIColor colorWithRed:_R/255.0 green:_G/255.0 blue:_B/255.0 alpha:_A]
-#define YWScreenW [UIScreen mainScreen].bounds.size.width
 
 static  CGFloat  const  kHYTopViewHeight = 40; //顶部视图的高度
 static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 
 @interface YWChooseAddressView ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
-@property (nonatomic,weak) YWAddressView * topTabbar;
-@property (nonatomic,weak) UIScrollView * contentView;
-@property (nonatomic,weak) UIView * underLine;
-@property (nonatomic,strong) NSArray * dataSouce;
-@property (nonatomic,strong) NSArray * cityDataSouce;
-@property (nonatomic,strong) NSArray * districtDataSouce;
-@property (nonatomic,strong) NSMutableArray * tableViews;
-@property (nonatomic,strong) NSMutableArray * topTabbarItems;
-@property (nonatomic,weak) UIButton * selectedBtn;
+@property (nonatomic,weak) YWAddressView        * topTabbar;
+@property (nonatomic,weak) UIScrollView         * contentView;
+@property (nonatomic,weak) UIView               * underLine;
+@property (nonatomic,strong) NSArray            * dataSouce;
+@property (nonatomic,strong) NSArray            * cityDataSouce;
+@property (nonatomic,strong) NSArray            * districtDataSouce;
+@property (nonatomic,strong) NSMutableArray     * tableViews;
+@property (nonatomic,strong) NSMutableArray     * topTabbarItems;
+@property (nonatomic,weak) UIButton             * selectedBtn;
 @end
 
 @implementation YWChooseAddressView
@@ -97,9 +94,9 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     tabbleView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tabbleView.delegate = self;
     tabbleView.dataSource = self;
-    tabbleView.contentInset = UIEdgeInsetsMake(0, 0, 80, 0);
+    tabbleView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     tabbleView.rowHeight = 44;
-    [tabbleView registerNib:[UINib nibWithNibName:@"YWAddressTableViewCell" bundle:nil] forCellReuseIdentifier:@"YWAddressTableViewCell"];
+    [tabbleView registerClass:[YWAddressTableViewCell class] forCellReuseIdentifier:@"YWAddressTableViewCell"];
 }
 
 - (void)addTopBarItem {
@@ -230,7 +227,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     YWAddressModel * item;
     if([self.tableViews indexOfObject:tableView] == 0) {
@@ -245,7 +242,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     YWAddressModel * item;
     if([self.tableViews indexOfObject:tableView] == 0) {
@@ -265,7 +262,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 #pragma mark - private 
 
 //点击按钮,滚动到对应位置
-- (void)topBarItemClick:(UIButton *)btn{
+- (void)topBarItemClick:(UIButton *)btn {
     
     NSInteger index = [self.topTabbarItems indexOfObject:btn];
     
@@ -276,7 +273,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 }
 
 //调整指示条位置
-- (void)changeUnderLineFrame:(UIButton  *)btn{
+- (void)changeUnderLineFrame:(UIButton  *)btn {
     
     _selectedBtn.selected = NO;
     btn.selected = YES;
@@ -286,7 +283,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 }
 
 //完成地址选择,执行chooseFinish代码块
-- (void)setUpAddress:(NSString *)address{
+- (void)setUpAddress:(NSString *)address {
 
     NSInteger index = self.contentView.contentOffset.x / YWScreenW;
     UIButton * btn = self.topTabbarItems[index];
@@ -300,7 +297,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
             continue;
         }
         [addressStr appendString:btn.currentTitle];
-        // [addressStr appendString:@" "]; // 省市区地址间加空格
+        // [addressStr appendString:@" "]; // 省市区地址间加空格或者其他间隔符号
     }
     self.address = addressStr;
     
@@ -313,7 +310,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 }
 
 //当重新选择省或者市的时候，需要将下级视图移除。
-- (void)removeLastItem{
+- (void)removeLastItem {
 
     [self.tableViews.lastObject performSelector:@selector(removeFromSuperview) withObject:nil withObject:nil];
     [self.tableViews removeLastObject];
@@ -323,7 +320,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 }
 
 //滚动到下级界面,并重新设置顶部按钮条上对应按钮的title
-- (void)scrollToNextItem:(NSString *)preTitle{
+- (void)scrollToNextItem:(NSString *)preTitle {
     
     NSInteger index = self.contentView.contentOffset.x / YWScreenW;
     UIButton * btn = self.topTabbarItems[index];
@@ -340,8 +337,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 
 
 #pragma mark - <UIScrollView>
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     if(scrollView != self.contentView) return;
     __weak typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.25 animations:^{
@@ -353,7 +349,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 
 #pragma mark - 开始就有地址时.
 
-- (void)setAreaCode:(NSString *)areaCode{
+- (void)setAreaCode:(NSString *)areaCode {
     
     _areaCode = areaCode;
     //2.1 添加市级别,地区级别列表
@@ -433,23 +429,23 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 #pragma mark - getter 方法
 
 //分割线
-- (UIView *)separateLine{
+- (UIView *)separateLine {
     
     UIView * separateLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 1 / [UIScreen mainScreen].scale)];
     separateLine.backgroundColor = YWCOLOR(222, 222, 222, 1);
     return separateLine;
 }
 
-- (NSMutableArray *)tableViews{
+- (NSMutableArray *)tableViews {
     
-    if (_tableViews == nil) {
+    if (!_tableViews) {
         _tableViews = [NSMutableArray array];
     }
     return _tableViews;
 }
 
-- (NSMutableArray *)topTabbarItems{
-    if (_topTabbarItems == nil) {
+- (NSMutableArray *)topTabbarItems {
+    if (!_topTabbarItems) {
         _topTabbarItems = [NSMutableArray array];
     }
     return _topTabbarItems;
@@ -457,9 +453,9 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 
 
 //省级别数据源
-- (NSArray *)dataSouce{
+- (NSArray *)dataSouce {
     
-    if (_dataSouce == nil) {
+    if (!_dataSouce) {
        
         _dataSouce = [[YWAddressDataTool sharedManager] queryAllProvince];
     }

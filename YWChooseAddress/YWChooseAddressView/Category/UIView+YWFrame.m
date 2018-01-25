@@ -1,14 +1,14 @@
 //
-//  UIView+Frame.m
-//  YWChooseAddressView
+//  UIView+YWFrame.m
+//  YWChooseAddress
 //
-//  Created by 90Candy on 17/12/25.
-//  Copyright © 2017年 apple. All rights reserved.
+//  Created by Candy on 2018/1/25.
+//  Copyright © 2018年 com.zhiweism. All rights reserved.
 //
 
-#import "UIView+Frame.h"
+#import "UIView+YWFrame.h"
 
-@implementation UIView (Frame)
+@implementation UIView (YWFrame)
 - (CGFloat)left {
     return self.frame.origin.x;
 }
@@ -138,4 +138,17 @@
     }];
 }
 
+// 传入字符串，计算大小2
++ (CGSize)getSizeByString:(NSString *)string sizeConstraint:(CGSize)sizeConstraint font:(UIFont *)font {
+    CGSize size = [string boundingRectWithSize:sizeConstraint
+                                       options:NSStringDrawingTruncatesLastVisibleLine
+                   | NSStringDrawingUsesLineFragmentOrigin
+                   | NSStringDrawingUsesFontLeading
+                                    attributes:@{NSFontAttributeName:font}
+                                       context:nil].size;
+    size.width += 8;
+    return size;
+}
+
 @end
+

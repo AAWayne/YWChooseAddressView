@@ -7,7 +7,7 @@
 //
 
 #import "YWAddressView.h"
-#import "UIView+Frame.h"
+#import "UIView+YWFrame.h"
 
 static  CGFloat  const  HYBarItemMargin = 20;
 @interface YWAddressView ()

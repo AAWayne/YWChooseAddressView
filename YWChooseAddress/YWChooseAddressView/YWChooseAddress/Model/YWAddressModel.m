@@ -10,7 +10,7 @@
 
 @implementation YWAddressModel
 
-- (instancetype)initWithDict:(NSDictionary *)dict{
+- (instancetype)initWithDict:(NSDictionary *)dict {
     
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
 
 }
 
