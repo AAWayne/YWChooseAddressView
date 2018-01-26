@@ -94,7 +94,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     tabbleView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tabbleView.delegate = self;
     tabbleView.dataSource = self;
-    tabbleView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
+    tabbleView.contentInset = UIEdgeInsetsMake(0, 0, 80, 0);
     tabbleView.rowHeight = 44;
     [tabbleView registerClass:[YWAddressTableViewCell class] forCellReuseIdentifier:@"YWAddressTableViewCell"];
 }

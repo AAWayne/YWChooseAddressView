@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
 
   s.name         = "YWChooseAddressView"
-  s.version      = "1.0.3"
-  s.summary      = "地区选择器"
+  s.version      = "1.0.4"
+  s.summary      = "高仿京东地区选择器"
   s.description  = <<-DESC
-                  高仿京东地区选择器
+                  地区选择器
                  DESC
   s.homepage     = "https://github.com/90candy/YWChooseAddressView"
   s.license              = { :type => "MIT", :file => "LICENSE" }
