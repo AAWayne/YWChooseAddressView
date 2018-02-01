@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YWChooseAddressView"
-  s.version      = "1.0.4"
+  s.version      = "1.0.5"
   s.summary      = "高仿京东地区选择器"
   s.description  = <<-DESC
                   地区选择器
@@ -16,5 +16,6 @@ Pod::Spec.new do |s|
   s.resources = "YWChooseAddress/YWChooseAddressView/Resource/*.{png,json}"
   s.requires_arc = true
   s.dependency "FMDB", "~> 2.7.2"
-
+  
+  # pod trunk push YWChooseAddressView.podspec  --allow-warnings
 end
