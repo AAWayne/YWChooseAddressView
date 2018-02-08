@@ -60,6 +60,15 @@
 - (void)addBtnAction {
     
     YWAddressViewController *addressVC = [[YWAddressViewController alloc] init];
+    // 保存后的地址回调
+    addressVC.addressBlock = ^(YWAddressInfoModel *model) {
+        NSLog(@"用户地址信息填写回调：");
+        NSLog(@"姓名：%@", model.nameStr);
+        NSLog(@"电话：%@", model.phoneStr);
+        NSLog(@"地区：%@", model.areaAddress);
+        NSLog(@"详细地址：%@", model.detailAddress);
+        NSLog(@"是否设为默认：%@", model.isDefaultAddress ? @"是" : @"不是");
+    };
     [self.navigationController pushViewController:addressVC animated:YES];
 }
 
@@ -69,11 +78,21 @@
     YWAddressViewController *addressVC = [[YWAddressViewController alloc] init];
     YWAddressInfoModel *model = [YWAddressInfoModel alloc];
     model.phoneStr = @"18888888888";
-    model.nameSrt = @"袁伟";
+    model.nameStr = @"袁伟";
     model.areaAddress = @"四川省成都市武侯区";
     model.detailAddress = @"下一站都市B座406";
-    model.isDefaultAddress = YES; // 如果是默认地址则传入YES
+    model.isDefaultAddress = NO; // 如果是默认地址则传入YES
     addressVC.model = model;
+    // 保存后的地址回调
+    addressVC.addressBlock = ^(YWAddressInfoModel *model) {
+        NSLog(@"用户地址信息填写回调：");
+        NSLog(@"姓名：%@", model.nameStr);
+        NSLog(@"电话：%@", model.phoneStr);
+        NSLog(@"地区：%@", model.areaAddress);
+        NSLog(@"详细地址：%@", model.detailAddress);
+        NSLog(@"是否设为默认：%@", model.isDefaultAddress ? @"是" : @"不是");
+    };
+    
     [self.navigationController pushViewController:addressVC animated:YES];
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36667679202C277800BDBBC8 /* YWTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 36667678202C277800BDBBC8 /* YWTool.m */; };
 		367CA775202BE9BA005D8B50 /* YWAddressInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 367CA774202BE9BA005D8B50 /* YWAddressInfoModel.m */; };
 		367CA77B202BEEA1005D8B50 /* YWAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367CA77A202BEEA1005D8B50 /* YWAddressViewController.m */; };
 		369E26F71FFBB1600009335F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E26F61FFBB1600009335F /* AppDelegate.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36667677202C277800BDBBC8 /* YWTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWTool.h; sourceTree = "<group>"; };
+		36667678202C277800BDBBC8 /* YWTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWTool.m; sourceTree = "<group>"; };
 		367CA773202BE9BA005D8B50 /* YWAddressInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWAddressInfoModel.h; sourceTree = "<group>"; };
 		367CA774202BE9BA005D8B50 /* YWAddressInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWAddressInfoModel.m; sourceTree = "<group>"; };
 		367CA779202BEEA1005D8B50 /* YWAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWAddressViewController.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 			children = (
 				369E27141FFBB1BE0009335F /* YWAddressDataTool.h */,
 				369E27151FFBB1BE0009335F /* YWAddressDataTool.m */,
+				36667677202C277800BDBBC8 /* YWTool.h */,
+				36667678202C277800BDBBC8 /* YWTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				369E27051FFBB1600009335F /* main.m in Sources */,
 				369E27261FFBB1BE0009335F /* YWAddressDataTool.m in Sources */,
 				369E27281FFBB1BE0009335F /* YWAddressTableViewCell.m in Sources */,
+				36667679202C277800BDBBC8 /* YWTool.m in Sources */,
 				369E273B1FFBB38A0009335F /* YWAddressTableViewCell1.m in Sources */,
 				369E26F71FFBB1600009335F /* AppDelegate.m in Sources */,
 				36EE43992019AA9800B192B2 /* UIView+YWFrame.m in Sources */,

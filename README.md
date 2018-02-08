@@ -1,6 +1,6 @@
 # YWChooseAddressView
 
-> 高仿京东地区选择器、高仿淘宝新增地址UI
+> 高仿淘宝地区选择器、编辑与新增地址UI
 
 ### 一、UI效果图
 <div align="center">    
@@ -20,7 +20,7 @@
 **1、在podfile文件中添加，然后执行 `pod install`操作**
 
 ```
-pod 'YWChooseAddressView', '~> 1.0.7'
+pod 'YWChooseAddressView', '~> 1.0.8'
 ```
 
 **2、在基类或者将要使用的界面导入`YWAddressDataTool`，本地初始化地区信息数据库**
@@ -50,6 +50,15 @@ model.areaAddress = @"四川省成都市武侯区";
 model.detailAddress = @"下一站都市B座406";
 model.isDefaultAddress = YES; // 如果是默认地址则传入YES
 addressVC.model = model;
+// 保存后的地址回调
+addressVC.addressBlock = ^(YWAddressInfoModel *model) {
+    NSLog(@"用户地址信息填写回调：");
+    NSLog(@"姓名：%@", model.nameStr);
+    NSLog(@"电话：%@", model.phoneStr);
+    NSLog(@"地区：%@", model.areaAddress);
+    NSLog(@"详细地址：%@", model.detailAddress);
+    NSLog(@"是否设为默认：%@", model.isDefaultAddress ? @"是" : @"不是");
+};
 [self.navigationController pushViewController:addressVC animated:YES];
 ```
 
