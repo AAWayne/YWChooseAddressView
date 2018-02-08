@@ -13,13 +13,13 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import <ContactsUI/ContactsUI.h>
 
-#import "NewAdressTableViewCell1.h"
-#import "NewAdressTableViewCell2.h"
-#import "NewAdressTableViewCell3.h"
+#import "YWAdressTableViewCell1.h"
+#import "YWAdressTableViewCell2.h"
+#import "YWAdressTableViewCell3.h"
 
-#define CELL_IDENTIFIER1     @"NewAdressTableViewCell1"
-#define CELL_IDENTIFIER2     @"NewAdressTableViewCell2"
-#define CELL_IDENTIFIER3     @"NewAdressTableViewCell3"
+#define CELL_IDENTIFIER1     @"YWAdressTableViewCell1"
+#define CELL_IDENTIFIER2     @"YWAdressTableViewCell2"
+#define CELL_IDENTIFIER3     @"YWAdressTableViewCell3"
 
 #define WeakSelf                __weak typeof(self) weakSelf = self
 #define YWScreenW               [UIScreen mainScreen].bounds.size.width
@@ -89,9 +89,9 @@
 #pragma mark *** 导航栏右上角 - 保存按钮 ***
 - (void)navRightItem {
     NSLog(@"保存收货地址");
-    NewAdressTableViewCell1 *nameCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    NewAdressTableViewCell1 *phoneCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    NewAdressTableViewCell3 *defaultCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    YWAdressTableViewCell1 *nameCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    YWAdressTableViewCell1 *phoneCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    YWAdressTableViewCell3 *defaultCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     _nameStr = nameCell.textField.text;
     _phoneStr = phoneCell.textField.text;
     _detailAddress = _detailTextViw.text;
@@ -235,7 +235,7 @@
     WeakSelf;
     if (indexPath.section == 0) {
         if (indexPath.row < 2) {
-            NewAdressTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER1 forIndexPath:indexPath];
+            YWAdressTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER1 forIndexPath:indexPath];
             cell.rightBtn.hidden = YES;
             cell.placehodlerStr = @"填写收货人姓名";
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -256,7 +256,7 @@
             }
             return cell;
         } else {
-            NewAdressTableViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER2 forIndexPath:indexPath];
+            YWAdressTableViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER2 forIndexPath:indexPath];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.leftStr = _dataSource[indexPath.section][indexPath.row];
             cell.rightStr = _areaAddress;
@@ -268,7 +268,7 @@
             return cell;
         }
     } else {
-        NewAdressTableViewCell3 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER3 forIndexPath:indexPath];
+        YWAdressTableViewCell3 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER3 forIndexPath:indexPath];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         cell.leftStr = _dataSource[indexPath.section][indexPath.row];
         return cell;

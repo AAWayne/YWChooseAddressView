@@ -1,5 +1,5 @@
 //
-//  NewAdressTableViewCell3.h
+//  YWAdressTableViewCell3.h
 //  clever
 //
 //  Created by Candy on 2017/12/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewAdressTableViewCell3 : UITableViewCell
+@interface YWAdressTableViewCell3 : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel  * leftLabel;
 @property (strong, nonatomic) IBOutlet UISwitch * rightSwitch;

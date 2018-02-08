@@ -1,14 +1,14 @@
 //
-//  NewAdressTableViewCell1.m
+//  YWAdressTableViewCell1.m
 //  clever
 //
 //  Created by Candy on 2017/12/29.
 //  Copyright © 2017年 apple. All rights reserved.
 //
 
-#import "NewAdressTableViewCell1.h"
+#import "YWAdressTableViewCell1.h"
 
-@implementation NewAdressTableViewCell1
+@implementation YWAdressTableViewCell1
 
 - (void)awakeFromNib {
     [super awakeFromNib];

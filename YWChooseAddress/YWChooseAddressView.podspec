@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YWChooseAddressView"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "高仿京东地区选择器、高仿淘宝新增地址UI"
   s.description  = <<-DESC
                   地区选择器
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/90candy/YWChooseAddressView.git", :tag => s.version }
   s.source_files  = "YWChooseAddress/YWChooseAddressView/**/*.{h,m}"
-  s.resources = "YWChooseAddress/YWChooseAddressView/Resource/*.{png,json}"
+  s.resources = "YWChooseAddress/YWChooseAddressView/Resource/*.{png,json,xib}"
   s.requires_arc = true
   s.dependency "FMDB", "~> 2.7.2"
   

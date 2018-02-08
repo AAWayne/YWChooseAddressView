@@ -26,7 +26,7 @@
 #pragma mark - setUp UI
 - (void)setUp {
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"YWChooseAddress 功能展示";
+    self.title = @"地区选择器 功能展示";
     
     // 开启异步线程初始化数据
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
