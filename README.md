@@ -2,21 +2,21 @@
 
 > 高仿京东地区选择器、高仿淘宝新增地址UI
 
-### UI效果图
+### 一、UI效果图
 <div align="center">    
 	<img src = "./UI效果图1.jpeg" width = "240" height = "430" alt="图片名称" align = center />
 	<img src = "./UI效果图2.jpeg" width = "240" height = "430" alt="图片名称" align = center />
 	<img src = "./UI效果图3.jpeg" width = "240" height = "430" alt="图片名称" align = center />
 </div>
 
-### 具体功能：
+### 二、具体功能：
 
 **1、可直接从通讯录获取联系人信息（姓名、电话）**
 
 **2、可是用封装好的高仿淘宝UI直接进行新增或编辑地址信息**
 
 
-### 推荐使用`CocoaPods`方式集成
+### 三、推荐使用`CocoaPods`方式集成
 **1、在podfile文件中添加，然后执行 `pod install`操作**
 
 ```
