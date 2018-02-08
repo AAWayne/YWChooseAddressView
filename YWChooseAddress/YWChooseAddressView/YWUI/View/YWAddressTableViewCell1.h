@@ -1,5 +1,5 @@
 //
-//  YWAdressTableViewCell1.h
+//  YWAddressTableViewCell1.h
 //  clever
 //
 //  Created by Candy on 2017/12/29.
@@ -11,7 +11,7 @@ typedef void(^ContactBlock)(void);
 #import <UIKit/UIKit.h>
 
 
-@interface YWAdressTableViewCell1 : UITableViewCell
+@interface YWAddressTableViewCell1 : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel      * leftLabel;
 @property (strong, nonatomic) IBOutlet UITextField  * textField;

@@ -13,18 +13,13 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import <ContactsUI/ContactsUI.h>
 
-#import "YWAdressTableViewCell1.h"
-#import "YWAdressTableViewCell2.h"
-#import "YWAdressTableViewCell3.h"
+#import "YWAddressTableViewCell1.h"
+#import "YWAddressTableViewCell2.h"
+#import "YWAddressTableViewCell3.h"
 
-#define CELL_IDENTIFIER1     @"YWAdressTableViewCell1"
-#define CELL_IDENTIFIER2     @"YWAdressTableViewCell2"
-#define CELL_IDENTIFIER3     @"YWAdressTableViewCell3"
-
-#define WeakSelf                __weak typeof(self) weakSelf = self
-#define YWScreenW               [UIScreen mainScreen].bounds.size.width
-#define YWScreenH               [UIScreen mainScreen].bounds.size.height
-#define YWCOLOR(_R,_G,_B,_A)    [UIColor colorWithRed:_R/255.0 green:_G/255.0 blue:_B/255.0 alpha:_A]
+#define CELL_IDENTIFIER1     @"YWAddressTableViewCell1"
+#define CELL_IDENTIFIER2     @"YWAddressTableViewCell2"
+#define CELL_IDENTIFIER3     @"YWAddressTableViewCell3"
 
 @interface YWAddressViewController ()<UITableViewDelegate, UITableViewDataSource, NSURLSessionDelegate,UIGestureRecognizerDelegate, CNContactViewControllerDelegate, CNContactPickerDelegate> {
     NSString            * _nameStr;
@@ -89,9 +84,9 @@
 #pragma mark *** 导航栏右上角 - 保存按钮 ***
 - (void)navRightItem {
     NSLog(@"保存收货地址");
-    YWAdressTableViewCell1 *nameCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    YWAdressTableViewCell1 *phoneCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    YWAdressTableViewCell3 *defaultCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    YWAddressTableViewCell1 *nameCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    YWAddressTableViewCell1 *phoneCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    YWAddressTableViewCell3 *defaultCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     _nameStr = nameCell.textField.text;
     _phoneStr = phoneCell.textField.text;
     _detailAddress = _detailTextViw.text;
@@ -235,7 +230,7 @@
     WeakSelf;
     if (indexPath.section == 0) {
         if (indexPath.row < 2) {
-            YWAdressTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER1 forIndexPath:indexPath];
+            YWAddressTableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER1 forIndexPath:indexPath];
             cell.rightBtn.hidden = YES;
             cell.placehodlerStr = @"填写收货人姓名";
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -256,7 +251,7 @@
             }
             return cell;
         } else {
-            YWAdressTableViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER2 forIndexPath:indexPath];
+            YWAddressTableViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER2 forIndexPath:indexPath];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.leftStr = _dataSource[indexPath.section][indexPath.row];
             cell.rightStr = _areaAddress;
@@ -268,7 +263,7 @@
             return cell;
         }
     } else {
-        YWAdressTableViewCell3 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER3 forIndexPath:indexPath];
+        YWAddressTableViewCell3 *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER3 forIndexPath:indexPath];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         cell.leftStr = _dataSource[indexPath.section][indexPath.row];
         return cell;
@@ -343,7 +338,7 @@
 - (YWChooseAddressView *)chooseAddressView {
     if (!_chooseAddressView) {
         WeakSelf;
-        _chooseAddressView = [[YWChooseAddressView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 350, [UIScreen mainScreen].bounds.size.width, 350)];
+        _chooseAddressView = [[YWChooseAddressView alloc]initWithFrame:CGRectMake(0, YWScreenH - 350, YWScreenW, 350)];
         // 设置默认
         // _chooseAddressView.address = @"四川省成都市武侯区";
         // _chooseAddressView.areaCode = @"510107";

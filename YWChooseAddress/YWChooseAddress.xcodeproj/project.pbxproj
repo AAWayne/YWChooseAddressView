@@ -23,12 +23,12 @@
 		369E27281FFBB1BE0009335F /* YWAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E271C1FFBB1BE0009335F /* YWAddressTableViewCell.m */; };
 		369E272A1FFBB1BE0009335F /* YWAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E271F1FFBB1BE0009335F /* YWAddressView.m */; };
 		369E272B1FFBB1BE0009335F /* YWChooseAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27211FFBB1BE0009335F /* YWChooseAddressView.m */; };
-		369E273B1FFBB38A0009335F /* YWAdressTableViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27321FFBB38A0009335F /* YWAdressTableViewCell1.m */; };
-		369E273C1FFBB38A0009335F /* YWAdressTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27331FFBB38A0009335F /* YWAdressTableViewCell1.xib */; };
-		369E273D1FFBB38A0009335F /* YWAdressTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27351FFBB38A0009335F /* YWAdressTableViewCell2.m */; };
-		369E273E1FFBB38A0009335F /* YWAdressTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27361FFBB38A0009335F /* YWAdressTableViewCell2.xib */; };
-		369E273F1FFBB38A0009335F /* YWAdressTableViewCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27381FFBB38A0009335F /* YWAdressTableViewCell3.m */; };
-		369E27401FFBB38A0009335F /* YWAdressTableViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27391FFBB38A0009335F /* YWAdressTableViewCell3.xib */; };
+		369E273B1FFBB38A0009335F /* YWAddressTableViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27321FFBB38A0009335F /* YWAddressTableViewCell1.m */; };
+		369E273C1FFBB38A0009335F /* YWAddressTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27331FFBB38A0009335F /* YWAddressTableViewCell1.xib */; };
+		369E273D1FFBB38A0009335F /* YWAddressTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27351FFBB38A0009335F /* YWAddressTableViewCell2.m */; };
+		369E273E1FFBB38A0009335F /* YWAddressTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27361FFBB38A0009335F /* YWAddressTableViewCell2.xib */; };
+		369E273F1FFBB38A0009335F /* YWAddressTableViewCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27381FFBB38A0009335F /* YWAddressTableViewCell3.m */; };
+		369E27401FFBB38A0009335F /* YWAddressTableViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27391FFBB38A0009335F /* YWAddressTableViewCell3.xib */; };
 		36EE43992019AA9800B192B2 /* UIView+YWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EE43982019AA9800B192B2 /* UIView+YWFrame.m */; };
 		556DF17DB6BF80FE46196C65 /* libPods-YWChooseAddress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E829FEED9EC7CD2027A98FAB /* libPods-YWChooseAddress.a */; };
 /* End PBXBuildFile section */
@@ -61,15 +61,15 @@
 		369E271F1FFBB1BE0009335F /* YWAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressView.m; sourceTree = "<group>"; };
 		369E27201FFBB1BE0009335F /* YWChooseAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWChooseAddressView.h; sourceTree = "<group>"; };
 		369E27211FFBB1BE0009335F /* YWChooseAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWChooseAddressView.m; sourceTree = "<group>"; };
-		369E27311FFBB38A0009335F /* YWAdressTableViewCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAdressTableViewCell1.h; sourceTree = "<group>"; };
-		369E27321FFBB38A0009335F /* YWAdressTableViewCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAdressTableViewCell1.m; sourceTree = "<group>"; };
-		369E27331FFBB38A0009335F /* YWAdressTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWAdressTableViewCell1.xib; sourceTree = "<group>"; };
-		369E27341FFBB38A0009335F /* YWAdressTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAdressTableViewCell2.h; sourceTree = "<group>"; };
-		369E27351FFBB38A0009335F /* YWAdressTableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAdressTableViewCell2.m; sourceTree = "<group>"; };
-		369E27361FFBB38A0009335F /* YWAdressTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWAdressTableViewCell2.xib; sourceTree = "<group>"; };
-		369E27371FFBB38A0009335F /* YWAdressTableViewCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAdressTableViewCell3.h; sourceTree = "<group>"; };
-		369E27381FFBB38A0009335F /* YWAdressTableViewCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAdressTableViewCell3.m; sourceTree = "<group>"; };
-		369E27391FFBB38A0009335F /* YWAdressTableViewCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWAdressTableViewCell3.xib; sourceTree = "<group>"; };
+		369E27311FFBB38A0009335F /* YWAddressTableViewCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressTableViewCell1.h; sourceTree = "<group>"; };
+		369E27321FFBB38A0009335F /* YWAddressTableViewCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressTableViewCell1.m; sourceTree = "<group>"; };
+		369E27331FFBB38A0009335F /* YWAddressTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWAddressTableViewCell1.xib; sourceTree = "<group>"; };
+		369E27341FFBB38A0009335F /* YWAddressTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressTableViewCell2.h; sourceTree = "<group>"; };
+		369E27351FFBB38A0009335F /* YWAddressTableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressTableViewCell2.m; sourceTree = "<group>"; };
+		369E27361FFBB38A0009335F /* YWAddressTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWAddressTableViewCell2.xib; sourceTree = "<group>"; };
+		369E27371FFBB38A0009335F /* YWAddressTableViewCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAddressTableViewCell3.h; sourceTree = "<group>"; };
+		369E27381FFBB38A0009335F /* YWAddressTableViewCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressTableViewCell3.m; sourceTree = "<group>"; };
+		369E27391FFBB38A0009335F /* YWAddressTableViewCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YWAddressTableViewCell3.xib; sourceTree = "<group>"; };
 		36EE43972019AA9800B192B2 /* UIView+YWFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YWFrame.h"; sourceTree = "<group>"; };
 		36EE43982019AA9800B192B2 /* UIView+YWFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YWFrame.m"; sourceTree = "<group>"; };
 		53A3FBCE4054695CC4DBA5EF /* Pods-YWChooseAddress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YWChooseAddress.release.xcconfig"; path = "Pods/Target Support Files/Pods-YWChooseAddress/Pods-YWChooseAddress.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,9 +168,9 @@
 				369E27121FFBB1BE0009335F /* Cities.json */,
 				369E27101FFBB1BE0009335F /* btn_check@2x.png */,
 				369E27111FFBB1BE0009335F /* btn_check@3x.png */,
-				369E27331FFBB38A0009335F /* YWAdressTableViewCell1.xib */,
-				369E27361FFBB38A0009335F /* YWAdressTableViewCell2.xib */,
-				369E27391FFBB38A0009335F /* YWAdressTableViewCell3.xib */,
+				369E27331FFBB38A0009335F /* YWAddressTableViewCell1.xib */,
+				369E27361FFBB38A0009335F /* YWAddressTableViewCell2.xib */,
+				369E27391FFBB38A0009335F /* YWAddressTableViewCell3.xib */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -237,12 +237,12 @@
 		369E27301FFBB38A0009335F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				369E27311FFBB38A0009335F /* YWAdressTableViewCell1.h */,
-				369E27321FFBB38A0009335F /* YWAdressTableViewCell1.m */,
-				369E27341FFBB38A0009335F /* YWAdressTableViewCell2.h */,
-				369E27351FFBB38A0009335F /* YWAdressTableViewCell2.m */,
-				369E27371FFBB38A0009335F /* YWAdressTableViewCell3.h */,
-				369E27381FFBB38A0009335F /* YWAdressTableViewCell3.m */,
+				369E27311FFBB38A0009335F /* YWAddressTableViewCell1.h */,
+				369E27321FFBB38A0009335F /* YWAddressTableViewCell1.m */,
+				369E27341FFBB38A0009335F /* YWAddressTableViewCell2.h */,
+				369E27351FFBB38A0009335F /* YWAddressTableViewCell2.m */,
+				369E27371FFBB38A0009335F /* YWAddressTableViewCell3.h */,
+				369E27381FFBB38A0009335F /* YWAddressTableViewCell3.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,12 +320,12 @@
 				369E27251FFBB1BE0009335F /* Cities.json in Resources */,
 				369E27021FFBB1600009335F /* LaunchScreen.storyboard in Resources */,
 				369E26FF1FFBB1600009335F /* Assets.xcassets in Resources */,
-				369E27401FFBB38A0009335F /* YWAdressTableViewCell3.xib in Resources */,
-				369E273C1FFBB38A0009335F /* YWAdressTableViewCell1.xib in Resources */,
+				369E27401FFBB38A0009335F /* YWAddressTableViewCell3.xib in Resources */,
+				369E273C1FFBB38A0009335F /* YWAddressTableViewCell1.xib in Resources */,
 				369E27231FFBB1BE0009335F /* btn_check@2x.png in Resources */,
 				369E27241FFBB1BE0009335F /* btn_check@3x.png in Resources */,
 				369E26FD1FFBB1600009335F /* Main.storyboard in Resources */,
-				369E273E1FFBB38A0009335F /* YWAdressTableViewCell2.xib in Resources */,
+				369E273E1FFBB38A0009335F /* YWAddressTableViewCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,8 +388,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				369E27271FFBB1BE0009335F /* YWAddressModel.m in Sources */,
-				369E273D1FFBB38A0009335F /* YWAdressTableViewCell2.m in Sources */,
-				369E273F1FFBB38A0009335F /* YWAdressTableViewCell3.m in Sources */,
+				369E273D1FFBB38A0009335F /* YWAddressTableViewCell2.m in Sources */,
+				369E273F1FFBB38A0009335F /* YWAddressTableViewCell3.m in Sources */,
 				367CA775202BE9BA005D8B50 /* YWAddressInfoModel.m in Sources */,
 				369E26FA1FFBB1600009335F /* ViewController.m in Sources */,
 				369E272A1FFBB1BE0009335F /* YWAddressView.m in Sources */,
@@ -398,7 +398,7 @@
 				369E27051FFBB1600009335F /* main.m in Sources */,
 				369E27261FFBB1BE0009335F /* YWAddressDataTool.m in Sources */,
 				369E27281FFBB1BE0009335F /* YWAddressTableViewCell.m in Sources */,
-				369E273B1FFBB38A0009335F /* YWAdressTableViewCell1.m in Sources */,
+				369E273B1FFBB38A0009335F /* YWAddressTableViewCell1.m in Sources */,
 				369E26F71FFBB1600009335F /* AppDelegate.m in Sources */,
 				36EE43992019AA9800B192B2 /* UIView+YWFrame.m in Sources */,
 			);

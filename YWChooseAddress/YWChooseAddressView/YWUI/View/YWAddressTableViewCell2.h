@@ -1,5 +1,5 @@
 //
-//  YWAdressTableViewCell2.h
+//  YWAddressTableViewCell2.h
 //  clever
 //
 //  Created by Candy on 2017/12/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YWAdressTableViewCell2 : UITableViewCell
+@interface YWAddressTableViewCell2 : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel * leftLabel;
 @property (strong, nonatomic) IBOutlet UILabel * rightLabel;

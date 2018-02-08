@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define WeakSelf                __weak typeof(self) weakSelf = self
 #define YWScreenW               [UIScreen mainScreen].bounds.size.width
+#define YWScreenH               [UIScreen mainScreen].bounds.size.height
 #define YWCOLOR(_R,_G,_B,_A)    [UIColor colorWithRed:_R/255.0 green:_G/255.0 blue:_B/255.0 alpha:_A]
 
 typedef enum : NSUInteger {
