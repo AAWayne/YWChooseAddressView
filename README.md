@@ -1,6 +1,6 @@
 # YWChooseAddressView
 
-> 高仿淘宝添加新地址UI、高仿京东地区选择器
+> 高仿京东地区选择器、高仿淘宝新增地址UI
 
 ### UI效果图
 <div align="center">    
@@ -20,7 +20,7 @@
 **1、在podfile文件中添加，然后执行 `pod install`操作**
 
 ```
-pod 'YWChooseAddressView', '~> 1.0.0'
+pod 'YWChooseAddressView', '~> 1.0.5'
 ```
 
 **2、在基类或者将要使用的界面导入`YWAddressDataTool`，本地初始化地区信息数据库**
