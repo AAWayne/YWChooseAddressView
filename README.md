@@ -9,134 +9,59 @@
 	<img src = "./UI效果图3.jpeg" width = "240" height = "430" alt="图片名称" align = center />
 </div>
 
-### 从通讯录获取联系人信息（姓名、电话）
-```
-#pragma mark *** 从通讯录选择联系人 电话 & 姓名 ***
-//用户点击 加号按钮 - 选择联系人
-- (void)selectContactAction {
-    // 弹出联系人列表 - 此方法只使用于 iOS 9.0以后
-    CNContactPickerViewController * pickerVC = [[CNContactPickerViewController alloc]init];
-    pickerVC.navigationItem.title = @"选择联系人";
-    pickerVC.delegate = self;
-    [self presentViewController:pickerVC animated:YES completion:nil];
-}
+### 具体功能：
 
-//这个方法在用户取消选择时调用
-- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker; {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+**1、可直接从通讯录获取联系人信息（姓名、电话）**
 
-#pragma mark - CNContactPickerDelegate
-// 这个方法在用户选择一个联系人后调用
-- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
-    // 1.获取姓名
-    NSString *firstname = contact.givenName;
-    NSString *lastname = contact.familyName;
-    NSLog(@"%@%@", lastname, firstname);
-    
-    //通过姓名寻找联系人
-    NSMutableString *fullName = [[NSMutableString alloc] init];
-    if ( lastname != nil || lastname.length > 0 ) {
-        [fullName appendString:lastname];
-    }
-    if ( firstname != nil || firstname.length > 0 ) {
-        [fullName appendString:firstname];
-    }
-    
-    // 2.获取电话号码
-    NSArray *phones = contact.phoneNumbers;
-    NSMutableArray *phoneNumbers = [NSMutableArray array];
-    // 3.遍历电话号码
-    for (CNLabeledValue *labelValue in phones) {
-        CNPhoneNumber *phoneNumber = labelValue.value;
-        //把 -、+86、空格 这些过滤掉
-        NSString *phoneStr = [phoneNumber.stringValue stringByReplacingOccurrencesOfString:@"-" withString:@""];
-        phoneStr = [phoneStr stringByReplacingOccurrencesOfString:@"+86" withString:@""];
-        phoneStr = [phoneStr stringByReplacingOccurrencesOfString:@" " withString:@""];
-        [phoneNumbers addObject:phoneStr];
-    }
-    
-    NSLog(@"选择的姓名：%@， 电话号码：%@", fullName, phoneNumbers.firstObject);
-    _nameStr = fullName;
-    // 这里直接取第一个电话号码，如果有多个请自行添加选择器
-    _phoneStr = phoneNumbers.firstObject;
-    [_tableView reloadData];
-    
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
+**2、可是用封装好的高仿淘宝UI直接进行新增或编辑地址信息**
 
+
+### 推荐使用`CocoaPods`方式集成
+**1、在podfile文件中添加，然后执行 `pod install`操作**
 
 ```
-
-### 弹出地区选择器视图
+pod 'YWChooseAddressView', '~> 1.0.0'
 ```
-#pragma mark *** 弹出选择地区视图 ***
-- (void)chooseAddress {
-    WeakSelf;
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        weakSelf.coverView.frame = CGRectMake(0, 0, YWScreenW, YWScreenH);
-        weakSelf.chooseAddressView.hidden = NO;
-    } completion:^(BOOL finished) {
-        // 动画结束之后添加阴影
-        weakSelf.coverView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-    }];
-}
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    CGPoint point = [gestureRecognizer locationInView:gestureRecognizer.view];
-    if (CGRectContainsPoint(_chooseAddressView.frame, point)){
-        return NO;
-    }
-    return YES;
-}
-
-
-- (void)tapCover:(UITapGestureRecognizer *)tap {
-    if (_chooseAddressView.chooseFinish) {
-        _chooseAddressView.chooseFinish();
-    }
-}
-
-- (YWChooseAddressView *)chooseAddressView {
-    if (!_chooseAddressView) {
-        WeakSelf;
-        _chooseAddressView = [[YWChooseAddressView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 350, [UIScreen mainScreen].bounds.size.width, 350)];
-        // 设置默认
-        // _chooseAddressView.address = @"四川省成都市武侯区";
-        // _chooseAddressView.areaCode = @"510107";
-        _chooseAddressView.chooseFinish = ^{
-            weakSelf.coverView.backgroundColor = [UIColor clearColor];
-            NSLog(@"选择的地区为：%@", weakSelf.chooseAddressView.address);
-            _areaAddress = weakSelf.chooseAddressView.address;
-            if (_areaAddress.length == 0) {
-                _areaAddress = @"请选择";
-            }
-            [weakSelf.tableView reloadData];
-            // 隐藏视图 - 动画
-            [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-                weakSelf.coverView.frame = CGRectMake(0, YWScreenH, YWScreenW, YWScreenH);
-                weakSelf.chooseAddressView.hidden = NO;
-            } completion:nil];
-        };
-    }
-    return _chooseAddressView;
-}
-
-- (UIView *)coverView {
-    if (!_coverView) {
-        _coverView = [[UIView alloc]initWithFrame:CGRectMake(0, YWScreenH, YWScreenW, YWScreenH)];
-        [_coverView addSubview:self.chooseAddressView];
-        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapCover:)];
-        [_coverView addGestureRecognizer:tap];
-        tap.delegate = self;
-    }
-    return _coverView;
-}
-
-@end
+**2、在基类或者将要使用的界面导入`YWAddressDataTool`，本地初始化地区信息数据库**
 
 ```
-### 代码下载地址
+#import "YWAddressDataTool.h"
 
-[【Demo传送门 - github】](https://github.com/90candy/YWChooseAddressView)
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // 开启异步线程初始化数据
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 预加载地区信息到本地数据库（避免UI卡顿）
+        [[YWAddressDataTool sharedManager] requestGetData];
+    });
+}
 
+```
+**3、如果使用`高仿淘宝UI`则直接导入YWUI文件夹中的`YWAddressViewController.h`**
+
+```
+// 这里传入需要编辑的地址信息（如果为新增地址则无需传入model）
+YWAddressViewController *addressVC = [[YWAddressViewController alloc] init];
+YWAddressInfoModel *model = [YWAddressInfoModel alloc];
+model.phoneStr = @"18888888888";
+model.nameSrt = @"袁伟";
+model.areaAddress = @"四川省成都市武侯区";
+model.detailAddress = @"下一站都市B座406";
+model.isDefaultAddress = YES; // 如果是默认地址则传入YES
+addressVC.model = model;
+[self.navigationController pushViewController:addressVC animated:YES];
+```
+
+**4、如果使用`高仿淘宝UI`则还需在`Info.plist`中添加通讯录权限**
+
+```
+key值：Privacy - Contacts Usage Description
+value值：如果不允许，则无法从通讯录中选择联系人信息
+```
+
+**简书地址：https://www.jianshu.com/p/cd7b97a53603**
+
+<div align="center">    
+	<img src = "http://upload-images.jianshu.io/upload_images/2822163-b2da3cbb19aa123f.png" width = "300" height = "100" alt="图片名称" align = center />
+</div>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		367CA775202BE9BA005D8B50 /* YWAddressInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 367CA774202BE9BA005D8B50 /* YWAddressInfoModel.m */; };
+		367CA77B202BEEA1005D8B50 /* YWAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 367CA77A202BEEA1005D8B50 /* YWAddressViewController.m */; };
 		369E26F71FFBB1600009335F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E26F61FFBB1600009335F /* AppDelegate.m */; };
 		369E26FA1FFBB1600009335F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E26F91FFBB1600009335F /* ViewController.m */; };
 		369E26FD1FFBB1600009335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369E26FB1FFBB1600009335F /* Main.storyboard */; };
@@ -21,7 +23,6 @@
 		369E27281FFBB1BE0009335F /* YWAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E271C1FFBB1BE0009335F /* YWAddressTableViewCell.m */; };
 		369E272A1FFBB1BE0009335F /* YWAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E271F1FFBB1BE0009335F /* YWAddressView.m */; };
 		369E272B1FFBB1BE0009335F /* YWChooseAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27211FFBB1BE0009335F /* YWChooseAddressView.m */; };
-		369E273A1FFBB38A0009335F /* YWNewAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E272F1FFBB38A0009335F /* YWNewAddressViewController.m */; };
 		369E273B1FFBB38A0009335F /* NewAdressTableViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27321FFBB38A0009335F /* NewAdressTableViewCell1.m */; };
 		369E273C1FFBB38A0009335F /* NewAdressTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 369E27331FFBB38A0009335F /* NewAdressTableViewCell1.xib */; };
 		369E273D1FFBB38A0009335F /* NewAdressTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E27351FFBB38A0009335F /* NewAdressTableViewCell2.m */; };
@@ -33,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		367CA773202BE9BA005D8B50 /* YWAddressInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWAddressInfoModel.h; sourceTree = "<group>"; };
+		367CA774202BE9BA005D8B50 /* YWAddressInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWAddressInfoModel.m; sourceTree = "<group>"; };
+		367CA779202BEEA1005D8B50 /* YWAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWAddressViewController.h; sourceTree = "<group>"; };
+		367CA77A202BEEA1005D8B50 /* YWAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWAddressViewController.m; sourceTree = "<group>"; };
 		369E26F21FFBB1600009335F /* YWChooseAddress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YWChooseAddress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369E26F51FFBB1600009335F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		369E26F61FFBB1600009335F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,8 +61,6 @@
 		369E271F1FFBB1BE0009335F /* YWAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAddressView.m; sourceTree = "<group>"; };
 		369E27201FFBB1BE0009335F /* YWChooseAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWChooseAddressView.h; sourceTree = "<group>"; };
 		369E27211FFBB1BE0009335F /* YWChooseAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWChooseAddressView.m; sourceTree = "<group>"; };
-		369E272E1FFBB38A0009335F /* YWNewAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWNewAddressViewController.h; sourceTree = "<group>"; };
-		369E272F1FFBB38A0009335F /* YWNewAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWNewAddressViewController.m; sourceTree = "<group>"; };
 		369E27311FFBB38A0009335F /* NewAdressTableViewCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAdressTableViewCell1.h; sourceTree = "<group>"; };
 		369E27321FFBB38A0009335F /* NewAdressTableViewCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAdressTableViewCell1.m; sourceTree = "<group>"; };
 		369E27331FFBB38A0009335F /* NewAdressTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAdressTableViewCell1.xib; sourceTree = "<group>"; };
@@ -94,6 +97,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		367CA76F202BE908005D8B50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				367CA773202BE9BA005D8B50 /* YWAddressInfoModel.h */,
+				367CA774202BE9BA005D8B50 /* YWAddressInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		369E26E91FFBB1600009335F = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +128,6 @@
 		369E26F41FFBB1600009335F /* YWChooseAddress */ = {
 			isa = PBXGroup;
 			children = (
-				369E272C1FFBB38A0009335F /* YWNewAddress */,
 				369E26F51FFBB1600009335F /* AppDelegate.h */,
 				369E26F61FFBB1600009335F /* AppDelegate.m */,
 				369E26F81FFBB1600009335F /* ViewController.h */,
@@ -134,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				369E27161FFBB1BE0009335F /* YWChooseAddress */,
+				369E272C1FFBB38A0009335F /* YWUI */,
 				369E270C1FFBB1BE0009335F /* Category */,
 				369E27131FFBB1BE0009335F /* Tool */,
 				369E270F1FFBB1BE0009335F /* Resource */,
@@ -200,20 +212,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		369E272C1FFBB38A0009335F /* YWNewAddress */ = {
+		369E272C1FFBB38A0009335F /* YWUI */ = {
 			isa = PBXGroup;
 			children = (
 				369E272D1FFBB38A0009335F /* Controller */,
+				367CA76F202BE908005D8B50 /* Model */,
 				369E27301FFBB38A0009335F /* View */,
 			);
-			path = YWNewAddress;
+			path = YWUI;
 			sourceTree = "<group>";
 		};
 		369E272D1FFBB38A0009335F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				369E272E1FFBB38A0009335F /* YWNewAddressViewController.h */,
-				369E272F1FFBB38A0009335F /* YWNewAddressViewController.m */,
+				367CA779202BEEA1005D8B50 /* YWAddressViewController.h */,
+				367CA77A202BEEA1005D8B50 /* YWAddressViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -376,10 +389,11 @@
 			files = (
 				369E27271FFBB1BE0009335F /* YWAddressModel.m in Sources */,
 				369E273D1FFBB38A0009335F /* NewAdressTableViewCell2.m in Sources */,
-				369E273A1FFBB38A0009335F /* YWNewAddressViewController.m in Sources */,
 				369E273F1FFBB38A0009335F /* NewAdressTableViewCell3.m in Sources */,
+				367CA775202BE9BA005D8B50 /* YWAddressInfoModel.m in Sources */,
 				369E26FA1FFBB1600009335F /* ViewController.m in Sources */,
 				369E272A1FFBB1BE0009335F /* YWAddressView.m in Sources */,
+				367CA77B202BEEA1005D8B50 /* YWAddressViewController.m in Sources */,
 				369E272B1FFBB1BE0009335F /* YWChooseAddressView.m in Sources */,
 				369E27051FFBB1600009335F /* main.m in Sources */,
 				369E27261FFBB1BE0009335F /* YWAddressDataTool.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "YWNewAddressViewController.h"
+#import "YWAddressViewController.h"
 #import "YWAddressDataTool.h"
 
 @interface ViewController ()
@@ -26,7 +26,7 @@
 #pragma mark - setUp UI
 - (void)setUp {
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"YWChooseAddress";
+    self.title = @"YWChooseAddress 功能展示";
     
     // 开启异步线程初始化数据
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -34,20 +34,47 @@
         [[YWAddressDataTool sharedManager] requestGetData];
     });
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.bounds = CGRectMake(0, 0, 120, 50);
-    btn.center = self.view.center;
-    [btn setTitle:@"添加新地址" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn setBackgroundColor:[UIColor orangeColor]];
-    [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    // 添加新地址
+    UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    addBtn.frame = CGRectMake(50, 350, 100, 50);
+    [addBtn setTitle:@"添加新地址" forState:UIControlStateNormal];
+    [addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [addBtn setBackgroundColor:[UIColor orangeColor]];
+    [addBtn addTarget:self action:@selector(addBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addBtn];
+    
+    // 编辑地址
+    UIButton *editBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    editBtn.frame = CGRectMake(YWScreenW - 150, 350, 100, 50);
+    [editBtn setTitle:@"编辑地址" forState:UIControlStateNormal];
+    [editBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [editBtn setBackgroundColor:[UIColor orangeColor]];
+    [editBtn addTarget:self action:@selector(editBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:editBtn];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil];
+    
 }
 
 #pragma mark - action
-- (void)btnAction {
-    YWNewAddressViewController *newAddressVC = [[YWNewAddressViewController alloc] init];
-    [self.navigationController pushViewController:newAddressVC animated:YES];
+- (void)addBtnAction {
+    
+    YWAddressViewController *addressVC = [[YWAddressViewController alloc] init];
+    [self.navigationController pushViewController:addressVC animated:YES];
+}
+
+- (void)editBtnAction {
+    
+    // 这里传入需要编辑的地址信息，例如:
+    YWAddressViewController *addressVC = [[YWAddressViewController alloc] init];
+    YWAddressInfoModel *model = [YWAddressInfoModel alloc];
+    model.phoneStr = @"18888888888";
+    model.nameSrt = @"袁伟";
+    model.areaAddress = @"四川省成都市武侯区";
+    model.detailAddress = @"下一站都市B座406";
+    model.isDefaultAddress = YES; // 如果是默认地址则传入YES
+    addressVC.model = model;
+    [self.navigationController pushViewController:addressVC animated:YES];
 }
 
 @end

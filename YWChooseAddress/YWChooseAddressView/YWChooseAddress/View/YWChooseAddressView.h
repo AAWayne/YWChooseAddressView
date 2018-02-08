@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+YWFrame.h"
 
 @interface YWChooseAddressView : UIView
 

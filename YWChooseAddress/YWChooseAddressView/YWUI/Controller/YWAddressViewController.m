@@ -1,12 +1,12 @@
 //
-//  YWNewAddressViewController.m
+//  YWAddressViewController.m
 //  YWChooseAddress
 //
-//  Created by Candy on 2017/12/29.
-//  Copyright © 2017年 apple. All rights reserved.
+//  Created by Candy on 2018/2/8.
+//  Copyright © 2018年 com.zhiweism. All rights reserved.
 //
 
-#import "YWNewAddressViewController.h"
+#import "YWAddressViewController.h"
 
 #import "YWChooseAddressView.h"
 #import "YWAddressDataTool.h"
@@ -26,7 +26,7 @@
 #define YWScreenH               [UIScreen mainScreen].bounds.size.height
 #define YWCOLOR(_R,_G,_B,_A)    [UIColor colorWithRed:_R/255.0 green:_G/255.0 blue:_B/255.0 alpha:_A]
 
-@interface YWNewAddressViewController ()<UITableViewDelegate, UITableViewDataSource, NSURLSessionDelegate,UIGestureRecognizerDelegate, CNContactViewControllerDelegate, CNContactPickerDelegate> {
+@interface YWAddressViewController ()<UITableViewDelegate, UITableViewDataSource, NSURLSessionDelegate,UIGestureRecognizerDelegate, CNContactViewControllerDelegate, CNContactPickerDelegate> {
     NSString            * _nameStr;
     NSString            * _phoneStr;
     NSString            * _areaAddress;
@@ -36,9 +36,9 @@
 
 @property (nonatomic, strong) UITableView         * tableView;
 @property (nonatomic, strong) NSArray             * dataSource;
-@property (nonatomic, strong) UITextView        * detailTextViw;
+@property (nonatomic, strong) UITextView          * detailTextViw;
 
-@property (nonatomic,strong) YWChooseAddressView   * chooseAddressView;
+@property (nonatomic,strong) YWChooseAddressView  * chooseAddressView;
 @property (nonatomic,strong) UIView               * coverView;
 
 
@@ -48,7 +48,7 @@
 
 @end
 
-@implementation YWNewAddressViewController
+@implementation YWAddressViewController
 
 
 - (void)viewDidLoad {
@@ -61,8 +61,8 @@
 }
 
 - (void)initUserInterface {
-    self.title = @"添加新地址";
-
+    
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(navRightItem)];
     
     [self.view addSubview:self.tableView];
@@ -70,11 +70,20 @@
     
 }
 - (void)initUserDataSource {
-
+    self.title = @"添加新地址";
     _dataSource = @[@[@"收货人", @"联系电话", @"所在地区"],
                     @[@"设为默认"]];
-    
     _areaAddress = @"请选择";
+    
+    if (self.model) {
+        self.title = @"编辑地址";
+        _phoneStr = _model.phoneStr;
+        _nameStr = _model.nameSrt;
+        _areaAddress = _model.areaAddress;
+        _detailAddress = [_model.detailAddress isEqual:[NSNull null]] ? @"" :
+        _model.detailAddress;
+        self.chooseAddressView.address = _areaAddress;
+    }
 }
 
 #pragma mark *** 导航栏右上角 - 保存按钮 ***
@@ -207,6 +216,11 @@
 
 #pragma mark *** UITableViewDataSource & UITableViewDelegate ***
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    if (self.model.isDefaultAddress) {
+        // 如果该地址已经是默认地址，则无需再显示 "设为默认" 这个按钮，即隐藏
+        return 1;
+    }
     return 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -301,7 +315,7 @@
         _tableView.backgroundColor = YWCOLOR(240, 240, 240, 1);
         _tableView.rowHeight = 50;
         _tableView.tableFooterView = [UIView new];
-         // 设置分割线
+        // 设置分割线
         [_tableView setSeparatorInset:UIEdgeInsetsZero];
         [_tableView setLayoutMargins:UIEdgeInsetsZero];
         // 注册cell
@@ -319,6 +333,9 @@
         // _detailTextViw.placeholder = @"请填写详细地址（尽量精确到单元楼或门牌号)";
         _detailTextViw.textContainerInset = UIEdgeInsetsMake(5, 15, 5, 15);
         _detailTextViw.font = [UIFont systemFontOfSize:14];
+        if (self.model.detailAddress.length > 0) {
+            _detailTextViw.text = _detailAddress;
+        }
     }
     return _detailTextViw;
 }
@@ -360,3 +377,4 @@
 }
 
 @end
+
