@@ -1,9 +1,9 @@
-<!--[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/chenfanfang/AvoidCrash)-->
+<!--[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/90candy/YWChooseAddressView)-->
 
-![Pod](https://img.shields.io/badge/Pod-1.0.8-orange.svg)
-![Platform](https://img.shields.io/badge/Platform-iOS-ff69b4.svg)
- ![License](https://img.shields.io/github/license/alibaba/dubbo.svg)
-[![Aboutme](https://img.shields.io/badge/About%20Me-阿唯不知道-blue.svg)](https://www.jianshu.com/u/0f7d26d766f4)
+[![Pod](https://img.shields.io/badge/Pod-1.0.8-orange.svg)](https://github.com/90candy)
+[![Platform](https://img.shields.io/badge/Platform-iOS-ff69b4.svg)](https://github.com/90candy)
+ [![License](https://img.shields.io/github/license/alibaba/dubbo.svg)](https://github.com/90candy)
+[![Author](https://img.shields.io/badge/Author-阿唯不知道-blue.svg)](https://www.jianshu.com/u/0f7d26d766f4)
 
 
 > 高仿淘宝地区选择器、编辑与新增地址UI
