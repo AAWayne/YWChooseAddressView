@@ -17,4 +17,5 @@
 
 @property (nonatomic,copy) NSString * areaCode;
 
+
 @end

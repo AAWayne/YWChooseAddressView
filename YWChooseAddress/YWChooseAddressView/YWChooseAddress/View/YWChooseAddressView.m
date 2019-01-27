@@ -157,7 +157,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
             for (int i = 0; i < self.tableViews.count && self.tableViews.count != 1; i++) {
                 [self removeLastItem];
             }
-            [self setUpAddress:provinceItem.name];
+            [self setUpAddress:provinceItem.name areaCode:provinceItem.code];
             return indexPath;
         }
         //1.1 判断是否是第一次选择,不是,则重新选择省,切换省.
@@ -220,7 +220,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     } else if ([self.tableViews indexOfObject:tableView] == 2) {
         
         YWAddressModel * item = self.districtDataSouce[indexPath.row];
-        [self setUpAddress:item.name];
+        [self setUpAddress:item.name areaCode:item.code];
     }
     return indexPath;
 }
@@ -282,7 +282,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 }
 
 //完成地址选择,执行chooseFinish代码块
-- (void)setUpAddress:(NSString *)address {
+- (void)setUpAddress:(NSString *)address areaCode:(NSString *)areaCode {
 
     NSInteger index = self.contentView.contentOffset.x / YWScreenW;
     UIButton * btn = self.topTabbarItems[index];
@@ -299,7 +299,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
         // [addressStr appendString:@" "]; // 省市区地址间加空格或者其他间隔符号
     }
     self.address = addressStr;
-    
+    _areaCode = areaCode;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.hidden = YES;
         if (self.chooseFinish) {

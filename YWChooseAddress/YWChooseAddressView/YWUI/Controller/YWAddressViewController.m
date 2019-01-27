@@ -131,6 +131,12 @@
 - (void)chooseAddress {
     WeakSelf;
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+//        if (weakSelf.model) {
+//            static dispatch_once_t onceToken;
+//            dispatch_once(&onceToken, ^{
+//                weakSelf.chooseAddressView.areaCode = weakSelf.model.areaCode;
+//            });
+//        }
         weakSelf.coverView.frame = CGRectMake(0, 0, YWScreenW, YWScreenH);
         weakSelf.chooseAddressView.hidden = NO;
     } completion:^(BOOL finished) {
@@ -355,12 +361,14 @@
         if ([_model.areaAddress isKindOfClass:[NSNull class]] || [_model.areaAddress isEqualToString:@""]) {
             _model.areaAddress = @"请选择";
         }
+        if (_model.areaCode && ![_model.areaCode isEqualToString:@""]) {
+            _chooseAddressView.areaCode = _model.areaCode;
+        }
         
         _chooseAddressView.address = _model.areaAddress;
-        
         _chooseAddressView.chooseFinish = ^{
             weakSelf.coverView.backgroundColor = [UIColor clearColor];
-            NSLog(@"选择的地区为：%@", weakSelf.chooseAddressView.address);
+            NSLog(@"选择的地区为：%@ - %@", weakSelf.chooseAddressView.areaCode, weakSelf.chooseAddressView.address);
             weakSelf.model.areaAddress = weakSelf.chooseAddressView.address;
             if (weakSelf.model.areaAddress.length == 0) {
                 weakSelf.model.areaAddress = @"请选择";

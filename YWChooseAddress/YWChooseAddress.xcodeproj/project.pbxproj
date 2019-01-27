@@ -542,9 +542,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RFYZ23A52S;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YWChooseAddress/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Candy.YWChooseAddress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,9 +558,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RFYZ23A52S;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YWChooseAddress/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Candy.YWChooseAddress;
 				PRODUCT_NAME = "$(TARGET_NAME)";

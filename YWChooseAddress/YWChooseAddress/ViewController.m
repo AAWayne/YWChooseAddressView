@@ -79,6 +79,7 @@
     YWAddressInfoModel *model = [YWAddressInfoModel alloc];
     model.phoneStr = @"18888888888";
     model.nameStr = @"袁伟";
+    model.areaCode = @"510107";
     model.areaAddress = @"四川省成都市武侯区";
     model.detailAddress = @"下一站都市B座406";
     model.isDefaultAddress = NO; // 如果是默认地址则传入YES

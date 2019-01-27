@@ -1,6 +1,5 @@
-<!--[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/90candy/YWChooseAddressView)-->
-
-[![Pod](https://img.shields.io/badge/Pod-1.0.8-orange.svg)](https://github.com/90candy)
+<!--[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/90candy)-->
+[![Pod](https://img.shields.io/badge/Pod-1.0.8-orange.svg)](https://github.com/90candy/YWChooseAddressView)
 [![Platform](https://img.shields.io/badge/Platform-iOS-ff69b4.svg)](https://github.com/90candy)
  [![License](https://img.shields.io/github/license/alibaba/dubbo.svg)](https://github.com/90candy)
 [![Author](https://img.shields.io/badge/Author-阿唯不知道-blue.svg)](https://www.jianshu.com/u/0f7d26d766f4)
