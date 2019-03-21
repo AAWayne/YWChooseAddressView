@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YWChooseAddressView"
-  s.version      = "1.0.8"
+  s.version      = "1.0.9"
   s.summary      = "高仿淘宝地区选择器、编辑与新增地址UI"
   s.description  = <<-DESC
                   高仿淘宝地区选择器、编辑地址UI、新增地址UI
